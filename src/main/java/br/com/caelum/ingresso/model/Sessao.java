@@ -2,14 +2,9 @@ package br.com.caelum.ingresso.model;
 
 import java.time.LocalTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 
-import org.hibernate.annotations.ManyToAny;
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 public class Sessao {
@@ -18,17 +13,17 @@ public class Sessao {
 	@GeneratedValue
 	private Integer id;
 	
-	@DateTimeFormat(pattern="HH:mm")
-	@NotNull
 	private LocalTime horario;
 		
-	@ManyToAny(metaColumn = @Column)
+	@ManyToOne
 	private Sala sala;
 	
-	@ManyToAny(metaColumn = @Column)
+	@ManyToOne
 	private Filme filme;
-	
-	@Deprecated
+
+	 /**
+     * @deprecated hibernate only
+     */
 	public Sessao() {
 	
 

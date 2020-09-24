@@ -18,6 +18,7 @@ public class Sala {
 
     @OneToMany(fetch = FetchType.EAGER)
     private Set<Lugar> lugares = new HashSet<>();
+    
 
     /**
      * @deprecated hibernate only

@@ -15,7 +15,7 @@ import br.com.caelum.ingresso.dao.FilmeDao;
 import br.com.caelum.ingresso.dao.SalaDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.Sessao;
-import br.com.caelum.ingresso.model.SessaoForm;
+import br.com.caelum.ingresso.model.form.SessaoForm;
 
 /*Determina que a classe será gerenciada pelo Spring*/
 @Controller

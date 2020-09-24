@@ -22,12 +22,11 @@ public class SessaoDao {
 		em.persist(sessao);
 	}
 
-	/* metodo que lista todas as sesãoes sala */
+	/* metodo que lista todas as sesãoes da sala */
 	public List<Sessao> buscaSessoesDaSala(Sala sala) {
-
-		return em.createQuery("select s from Sessao s where s.sala = :sala", Sessao.class).setParameter("sala", sala)
-				.getResultList();
-
-	}
-
+		return em.createQuery("select s from Sessao s where s.sala = :sala",
+		Sessao.class)
+		.setParameter("sala", sala)
+		.getResultList();
+		}
 }

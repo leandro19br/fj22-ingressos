@@ -1,17 +1,18 @@
-package br.com.caelum.ingresso.model;
+package br.com.caelum.ingresso.model.form;
 
 import java.time.LocalTime;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.ManyToAny;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import br.com.caelum.ingresso.dao.FilmeDao;
 import br.com.caelum.ingresso.dao.SalaDao;
+import br.com.caelum.ingresso.model.Filme;
+import br.com.caelum.ingresso.model.Sala;
+import br.com.caelum.ingresso.model.Sessao;
+
+
 
 /*classe responsável por representar os dados vindos do formulário*/
 
@@ -34,7 +35,7 @@ public class SessaoForm {
 		Filme filme = filmeDAO.findOne(filmeId);
 		Sala sala = salaDAO.findOne(SalaId);
 		
-		Sessao sessao = new Sessao(horario,filme,sala);
+		Sessao sessao = new Sessao(this.horario,filme,sala);
 		
 		return sessao;
 	}
